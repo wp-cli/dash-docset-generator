@@ -1,0 +1,24 @@
+{
+  "name": "ptrkcsk/dash-wp-cli",
+  "description": "Generate Dash docs for WP-CLI",
+  "type": "project",
+  "keywords": [
+    "dash",
+    "docset",
+    "wp-cli",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Patrik Csak",
+      "email": "patrik@csak.email"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "DashWpCli\\": "src/"
+    }
+  }
+}
