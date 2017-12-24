@@ -1,5 +1,6 @@
 {
-  "name": "ptrkcsk/dash-wp-cli",
+  "name": "ptrkcsk/wp-cli-dash-docset-generator",
+  "version": "0.1.0",
   "description": "Generate Dash docs for WP-CLI",
   "type": "project",
   "keywords": [
@@ -15,7 +16,11 @@
       "email": "patrik@csak.email"
     }
   ],
-  "require": {},
+  "require": {
+    "php": ">=5.6",
+    "ext-dom": "*",
+    "ext-sqlite3": "*"
+  },
   "autoload": {
     "psr-4": {
       "DashWpCli\\": "src/"
