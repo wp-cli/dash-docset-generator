@@ -15,6 +15,6 @@ vendor:
 clean:
 	rm -rf vendor
 	rm -rf WP-CLI.docset/Contents/Resources/Documents/commands
-	rm WP-CLI.docset/Contents/Resources/docSet.dsidx
+	rm -f WP-CLI.docset/Contents/Resources/docSet.dsidx
 
 .PHONY: all clean
