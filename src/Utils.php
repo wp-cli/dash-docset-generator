@@ -11,6 +11,8 @@ final class Utils
     public static function removeElement($selector, $xpath)
     {
         $element = $xpath->query($selector)->item(0);
-        $element->parentNode->removeChild($element);
+        if ($element) {
+            $element->parentNode->removeChild($element);
+        }
     }
 }
