@@ -1,4 +1,5 @@
+/src/versions/*
 /vendor/
-/WP-CLI.docset/Contents/Resources/Documents/commands/
-/WP-CLI.docset/Contents/Resources/docSet.dsidx
+/versions/*
+/WP-CLI.docset/
 WP-CLI.tgz

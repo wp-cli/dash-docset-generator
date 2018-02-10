@@ -1,13 +1,18 @@
 # WP-CLI Dash Docset Generator
 
-## Prerequsites
+Generates Dash docsets for [all versions](https://github.com/wp-cli/handbook/releases) of WP-CLI commands documentation.
 
-- PHP 5.6 or later, with the following extensions enabled:
-  - [DOM](http://php.net/manual/en/book.dom.php)
-  - [SQLite3](http://php.net/manual/en/book.sqlite3.php)
+## Supported Dash features
+
+- ✅ [Table of contents](https://kapeli.com/docsets#tableofcontents)
+- ✅ [Index page](https://kapeli.com/docsets#settingindexpage)
+- ✅ [Online redirection](https://kapeli.com/docsets#onlineRedirection)
+
+## Requirements
+
+- PHP \>=7.0
 - [Composer](https://getcomposer.org/)
 - [Make](https://www.gnu.org/software/make/)
-- [Tar](https://www.gnu.org/software/tar/)
 
 ## Usage
 

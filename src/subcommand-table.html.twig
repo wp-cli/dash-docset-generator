@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for command in commands %}
+        <tr>
+            <td>
+                <a class="dashAnchor"
+                   name="//apple_ref/cpp/Command/{{ command.name | url_encode }}"
+                   href="{{ command.href }}">
+                    <code>wp {{ command.name }}</code>
+                </a>
+            </td>
+            <td>{{ command.description }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

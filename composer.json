@@ -1,7 +1,7 @@
 {
   "name": "ptrkcsk/wp-cli-dash-docset-generator",
-  "version": "0.1.0",
-  "description": "Generate Dash docs for WP-CLI",
+  "description": "Generates Dash docsets for WP-CLI",
+  "version": "1.0.0",
   "type": "project",
   "keywords": [
     "dash",
@@ -9,6 +9,7 @@
     "wp-cli",
     "wordpress"
   ],
+  "homepage": "https://github.com/ptrkcsk/wp-cli-dash-docset-generator",
   "license": "MIT",
   "authors": [
     {
@@ -17,9 +18,17 @@
     }
   ],
   "require": {
-    "php": ">=5.6",
-    "ext-dom": "*",
-    "ext-sqlite3": "*"
+    "php": ">=7",
+    "ext-sqlite3": "*",
+    "symfony/filesystem": "^3.4",
+    "knplabs/github-api": "^2.7",
+    "php-http/guzzle6-adapter": "^1.1",
+    "erusev/parsedown": "^1.6",
+    "symfony/finder": "^4.0",
+    "twig/twig": "^2.4",
+    "composer/semver": "^1.4",
+    "alchemy/zippy": "^0.4.8",
+    "twbs/bootstrap": "^4.0"
   },
   "autoload": {
     "psr-4": {

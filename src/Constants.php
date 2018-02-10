@@ -4,6 +4,8 @@ namespace DashWpCli;
 
 final class Constants
 {
-    const COMMANDS_INDEX_PATH = __DIR__ . '/../WP-CLI.docset/Contents/Resources/Documents/commands/';
-    const COMMANDS_INDEX_PUBLIC_URL = 'https://developer.wordpress.org/cli/commands/';
+    const GITHUB_API_ROOT_ENDPOINT_URL = 'https://api.github.com';
+    const GITHUB_WP_CLI_ORG = 'wp-cli';
+    const GITHUB_WP_CLI_HANDBOOK_REPO = 'handbook';
+    const COMMANDS_DOCS_URL = 'https://developer.wordpress.org/cli/commands/';
 }

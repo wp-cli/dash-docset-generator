@@ -11,7 +11,7 @@
         <key>isDashDocset</key>
         <true/>
         <key>dashIndexFilePath</key>
-        <string>commands/index.html</string>
+        <string>index.html</string>
         <key>DashDocSetFamily</key>
         <string>dashtoc</string>
     </dict>

@@ -1,10 +1,6 @@
-builtFiles = WP-CLI.docset/Contents/Resources/Documents/commands \
-             WP-CLI.docset/Contents/Resources/docSet.dsidx
+builtFiles = versions WP-CLI.tgz
 
 all: clean WP-CLI.tgz
-
-WP-CLI.tgz: $(builtFiles)
-	tar --exclude='.DS_Store' -cvzf WP-CLI.tgz WP-CLI.docset
 
 $(builtFiles): vendor
 	php build.php
@@ -13,8 +9,10 @@ vendor:
 	composer install
 
 clean:
+	rm -rf src/versions
+	rm -rf versions
 	rm -rf vendor
-	rm -rf WP-CLI.docset/Contents/Resources/Documents/commands
-	rm -f WP-CLI.docset/Contents/Resources/docSet.dsidx
+	rm -rf WP-CLI.docset
+	rm -f WP-CLI.tgz
 
 .PHONY: all clean
