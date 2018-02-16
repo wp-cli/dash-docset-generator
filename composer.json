@@ -1,7 +1,7 @@
 {
   "name": "ptrkcsk/wp-cli-dash-docset-generator",
   "description": "Generates Dash docsets for WP-CLI",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "project",
   "keywords": [
     "dash",
