@@ -69,8 +69,7 @@ class Command
         $css = file_get_contents(
             __DIR__ . '/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
         );
-        $css .= '.card { margin-bottom: 1rem }';
-        $css .= '.card-body > pre { margin-bottom: 0 }';
+        $css .= file_get_contents(__DIR__ . '/main.css');
         return $css;
     }
 

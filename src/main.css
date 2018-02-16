@@ -1,0 +1,7 @@
+.card {
+    margin-bottom: 1rem;
+}
+
+.card-body > pre {
+    margin-bottom: 0;
+}
