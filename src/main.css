@@ -5,3 +5,11 @@
 .card-body > pre {
     margin-bottom: 0;
 }
+
+h1 {
+    margin: 1rem 0 3rem;
+}
+
+h3 {
+    margin: 3rem 0;
+}
