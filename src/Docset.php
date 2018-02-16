@@ -78,7 +78,9 @@ final class Docset
 
     private function saveHtml(string $dir)
     {
-        $twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__));
+        $twig = new Twig_Environment(
+            new Twig_Loader_Filesystem(__DIR__ . '/templates')
+        );
         foreach ($this->commands as $command) {
             $command->save(
                 "{$dir}/{$this->getRelativePathTo('html')}",
@@ -102,7 +104,7 @@ final class Docset
                 'css' => file_get_contents(
                     __DIR__ . '/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
                 ),
-                'js' => file_get_contents(__DIR__ . '/add-href.js')
+                'js' => file_get_contents(__DIR__ . '/js/add-href.js')
             ])
         );
     }
@@ -117,8 +119,8 @@ final class Docset
             (new Filesystem())->remove($htmlDir);
         } else {
             mkdir($htmlDir, 0777, true);
-            copy(__DIR__ . '/icon.png', "{$docsetPath}/icon.png");
-            copy(__DIR__ . '/Info.plist', "{$docsetPath}/Contents/Info.plist");
+            copy(__DIR__ . '/img/icon.png', "{$docsetPath}/icon.png");
+            copy(__DIR__ . '/config/Info.plist', "{$docsetPath}/Contents/Info.plist");
             touch("{$dir}/{$this->getRelativePathTo('db')}");
         }
     }

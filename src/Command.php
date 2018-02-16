@@ -33,7 +33,9 @@ class Command
         $this->bodyHtml = Filter::html(
             $parsedown->setBreaksEnabled(true)->text(file_get_contents($file))
         );
-        $this->twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__));
+        $this->twig = new Twig_Environment(
+            new Twig_Loader_Filesystem(__DIR__ . '/templates')
+        );
         $this->addSubcommands(\dirname($file) . '/' . $this->getShortName());
     }
 
@@ -69,7 +71,7 @@ class Command
         $css = file_get_contents(
             __DIR__ . '/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
         );
-        $css .= file_get_contents(__DIR__ . '/main.css');
+        $css .= file_get_contents(__DIR__ . '/css/main.css');
         return $css;
     }
 
@@ -92,7 +94,7 @@ class Command
 
     private function getJs(): string
     {
-        return file_get_contents(__DIR__ . '/add-href.js');
+        return file_get_contents(__DIR__ . '/js/add-href.js');
     }
 
     public function getRelativePath(): string
