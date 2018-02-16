@@ -148,7 +148,7 @@ class Command
 
     private function saveToDb(Db $db)
     {
-        if (substr_count($this->name, ' ') + 1 > 1) {
+        if (strpos($this->name, ' ') !== false) {
             $dir = \dirname(str_replace(' ', '/', $this->name));
             $path = "{$dir}/{$this->getShortName()}.html";
         } else {
