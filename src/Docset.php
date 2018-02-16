@@ -88,7 +88,8 @@ final class Docset
         $commands = array_map(function (Command $command) {
             return [
                 'name' => $command->name,
-                'description' => $command->getDescription()
+                'description' => $command->getDescription(),
+                'relativeHref' => $command->getRelativePath()
             ];
         }, $this->commands);
         usort($commands, function ($a, $b) {
@@ -100,7 +101,8 @@ final class Docset
                 'commands' => $commands,
                 'css' => file_get_contents(
                     __DIR__ . '/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
-                )
+                ),
+                'js' => file_get_contents(__DIR__ . '/add-href.js')
             ])
         );
     }

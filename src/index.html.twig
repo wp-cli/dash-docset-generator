@@ -25,7 +25,7 @@
                 <td>
                     <a class="dashAnchor"
                        name="//apple_ref/cpp/Command/{{ command.name | url_encode }}"
-                       href="{{ command.name }}.html">
+                       data-relative-href="{{ command.relativeHref }}">
                         <code>wp {{ command.name }}</code>
                     </a>
                 </td>
@@ -35,5 +35,6 @@
         </tbody>
     </table>
 </div>
+<script>{{ js | raw }}</script>
 </body>
 </html>

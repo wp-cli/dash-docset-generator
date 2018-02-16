@@ -91,6 +91,22 @@ class Command
         return '';
     }
 
+    private function getJs(): string
+    {
+        return file_get_contents(__DIR__ . '/add-href.js');
+    }
+
+    public function getRelativePath(): string
+    {
+        if (strpos($this->name, ' ') !== false) {
+            $dir = \dirname(str_replace(' ', '/', $this->name));
+            $path = "/{$dir}/{$this->getShortName()}.html";
+        } else {
+            $path = "/{$this->getShortName()}.html";
+        }
+        return $path;
+    }
+
     private function getShortName(): string
     {
         return ($pos = strrpos($this->name, ' '))
@@ -98,14 +114,14 @@ class Command
             : $this->name;
     }
 
-    private function getSubcommandHtml(string $dir): string
+    private function getSubcommandHtml(): string
     {
         if ($this->subcommands) {
-            $commands = array_map(function (Command $command) use ($dir) {
+            $commands = array_map(function (Command $command) {
                 return [
                     'name' => $command->name,
                     'description' => $command->getDescription(),
-                    'href' => "{$dir}/{$this->getShortName()}/{$command->getShortName()}.html"
+                    'relativeHref' => $command->getRelativePath()
                 ];
             }, $this->subcommands);
             return $this->twig->render('subcommand-table.html.twig', [
@@ -137,8 +153,9 @@ class Command
                 'title' => "wp {$this->name}",
                 'css' => $css,
                 'bodyHtml' => $this->getBodyHtml(),
-                'subcommandHtml' => $this->getSubcommandHtml($dir),
+                'subcommandHtml' => $this->getSubcommandHtml(),
                 'globalParametersHtml' => $this->getGlobalParametersHtml(),
+                'js' => $this->getJs()
             ])
         );
         foreach ($this->subcommands as $command) {
@@ -148,13 +165,7 @@ class Command
 
     private function saveToDb(Db $db)
     {
-        if (strpos($this->name, ' ') !== false) {
-            $dir = \dirname(str_replace(' ', '/', $this->name));
-            $path = "{$dir}/{$this->getShortName()}.html";
-        } else {
-            $path = "{$this->getShortName()}.html";
-        }
-        $db->createCommand($this->name, $path);
+        $db->createCommand($this->name, $this->getRelativePath());
         foreach ($this->subcommands as $subcommand) {
             $subcommand->saveToDb($db);
         }
