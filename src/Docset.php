@@ -27,6 +27,15 @@ final class Docset
         $this->version = $version;
     }
 
+    private function getIndexCss(): string
+    {
+        $css = file_get_contents(
+            __DIR__ . '/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
+        );
+        $css .= file_get_contents(__DIR__ . '/css/main.css');
+        return $css;
+    }
+
     /**
      * @param string $resource
      * @return string|false
@@ -102,9 +111,7 @@ final class Docset
             "{$dir}/{$this->getRelativePathTo('html')}/index.html",
             $twig->render('index.html.twig', [
                 'commands' => $commands,
-                'css' => file_get_contents(
-                    __DIR__ . '/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css'
-                ),
+                'css' => $this->getIndexCss(),
                 'js' => file_get_contents(__DIR__ . '/js/add-href.js')
             ])
         );
