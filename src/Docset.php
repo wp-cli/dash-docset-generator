@@ -52,6 +52,7 @@ final class Docset
 
     public function save(string $dir)
     {
+        $this->commands = [];
         $this->scaffold($dir);
         $this->db = new Db("{$dir}/{$this->getRelativePathTo('db')}");
         /** @var Finder $mdFiles */
