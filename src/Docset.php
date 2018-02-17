@@ -95,7 +95,7 @@ final class Docset
             ];
         }, $this->commands);
         usort($commands, function ($a, $b) {
-            return strcmp($a['name'][0], $b['name'][0]);
+            return strcmp($a['name'], $b['name']);
         });
         file_put_contents(
             "{$dir}/{$this->getRelativePathTo('html')}/index.html",
