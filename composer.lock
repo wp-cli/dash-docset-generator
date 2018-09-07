@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "140e18d40ae7ad4e592ef2d655e91606",
+    "content-hash": "4b2160974ce14d093c7e1b8f0fc516ea",
     "packages": [
         {
             "name": "alchemy/zippy",
