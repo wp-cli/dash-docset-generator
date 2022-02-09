@@ -4,8 +4,8 @@ namespace DashWpCli;
 
 use Parsedown;
 use Symfony\Component\Finder\Finder;
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use Twig\Environment as TwigEnvironment;
+use Twig\Loader\FilesystemLoader as TwigFilesystemLoader;
 
 class Command
 {
@@ -18,7 +18,7 @@ class Command
     /** @var Command[] */
     private $subcommands = [];
 
-    /** @va  Twig_Environment */
+    /** @var TwigEnvironment */
     private $twig;
 
     /**
@@ -33,8 +33,8 @@ class Command
         $this->bodyHtml = Filter::html(
             $parsedown->setBreaksEnabled(true)->text(file_get_contents($file))
         );
-        $this->twig = new Twig_Environment(
-            new Twig_Loader_Filesystem(__DIR__ . '/templates')
+        $this->twig = new TwigEnvironment(
+            new TwigFilesystemLoader(__DIR__ . '/templates')
         );
         $this->addSubcommands(\dirname($file) . '/' . $this->getShortName());
     }
