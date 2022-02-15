@@ -5,8 +5,8 @@ namespace DashWpCli;
 use Alchemy\Zippy\Zippy;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use Twig\Environment as TwigEnvironment;
+use Twig\Loader\FilesystemLoader as TwigFilesystemLoader;
 
 final class Docset
 {
@@ -88,8 +88,8 @@ final class Docset
 
     private function saveHtml(string $dir)
     {
-        $twig = new Twig_Environment(
-            new Twig_Loader_Filesystem(__DIR__ . '/templates')
+        $twig = new TwigEnvironment(
+            new TwigFilesystemLoader(__DIR__ . '/templates')
         );
         foreach ($this->commands as $command) {
             $command->save(

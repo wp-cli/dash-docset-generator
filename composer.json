@@ -18,21 +18,25 @@
     }
   ],
   "require": {
-    "php": ">=7",
+    "php": "7.4 - 8.1",
     "ext-sqlite3": "*",
-    "symfony/filesystem": "^3.4",
-    "knplabs/github-api": "^2.7",
-    "php-http/guzzle6-adapter": "^1.1",
+    "alchemy/zippy": "^1.0",
+    "composer/semver": "^3.2",
     "erusev/parsedown": "^1.6",
-    "symfony/finder": "^4.0",
-    "twig/twig": "^2.4",
-    "composer/semver": "^1.4",
-    "alchemy/zippy": "^0.4.8",
-    "twbs/bootstrap": "^4.0"
+    "guzzlehttp/guzzle": "^7.0.1",
+    "http-interop/http-factory-guzzle": "^1.0",
+    "knplabs/github-api": "^3.0",
+    "symfony/filesystem": "^5.4",
+    "symfony/finder": "^5.4",
+    "twbs/bootstrap": "^5.1",
+    "twig/twig": "^3.3"
   },
   "autoload": {
     "psr-4": {
       "DashWpCli\\": "src/"
     }
+  },
+  "config": {
+    "sort-packages": true
   }
 }
