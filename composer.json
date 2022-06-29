@@ -1,5 +1,5 @@
 {
-  "name": "ptrkcsk/wp-cli-dash-docset-generator",
+  "name": "wp-cli/dash-docset-generator",
   "description": "Generates Dash docsets for WP-CLI",
   "version": "1.2.0",
   "type": "project",
@@ -9,7 +9,7 @@
     "wp-cli",
     "wordpress"
   ],
-  "homepage": "https://github.com/ptrkcsk/wp-cli-dash-docset-generator",
+  "homepage": "https://github.com/wp-cli/dash-docset-generator",
   "license": "MIT",
   "authors": [
     {
