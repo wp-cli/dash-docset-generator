@@ -23,7 +23,7 @@
     "alchemy/zippy": "^1.0",
     "composer/semver": "^3.2",
     "erusev/parsedown": "^1.6",
-    "guzzlehttp/guzzle": "^7.0.1",
+    "guzzlehttp/guzzle": "^7.0",
     "http-interop/http-factory-guzzle": "^1.0",
     "knplabs/github-api": "^3.0",
     "symfony/filesystem": "^5.4",
