@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "php": "7.4 - 8.1",
+    "php": "8.0 - 8.2",
     "ext-sqlite3": "*",
     "alchemy/zippy": "^1.0",
     "composer/semver": "^3.2",
